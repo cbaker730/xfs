@@ -1,31 +1,32 @@
 <html>
-    <head>
-        <title>Clickjacking / cross site framing test</title>
-        <script>
-			      function frameURL() {
-				        var url = document.getElementById("url").value;
-				        var iframe = document.getElementById("iframe");
+  <head>
+  <title>Clickjacking / cross site framing test</title>
 
-				        iframe.src = url;
+  <script>
+    function frameURL() {
+	var url = document.getElementById("url").value;
+	var iframe = document.getElementById("iframe");
 
-			      } 
+	iframe.src = url;
+      } 
 
-			      document.addEventListener('DOMContentLoaded', function () {
-				        document.getElementById('submit-test').addEventListener('click',
-					          function() {
-						            frameURL();
-					          }
-				        );
-			      });
-		    </script>
-    </head>
-    <body>
-        <h2>Test for clickjacking/cross site framing</h2>
-        <p>Enter the URL to check:</p>
-        <p> </p>
-        <input id="url" type="text" value="http://example.com">
-        <button id="submit-test">Go</button>
-        <br />
-        <iframe src="about:blank" id="iframe" width="800px" height="600px"></iframe>
-    </body>
+      document.addEventListener('DOMContentLoaded', function () {
+	document.getElementById('submit-test').addEventListener('click',
+	  function() {
+	    frameURL();
+	  }
+	);
+      });
+  </script>
+
+  </head>
+  <body>
+    <h2>Test for clickjacking/cross site framing</h2>
+    <p>Enter the URL to check:</p>
+    <p> </p>
+    <input id="url" type="text" value="http://example.com">
+    <button id="submit-test">Go</button>
+    <br>
+    <iframe src="about:blank" id="iframe" width="800px" height="600px"></iframe>
+  </body>
 </html>
